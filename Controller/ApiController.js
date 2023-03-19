@@ -63,15 +63,17 @@ const getPost = async (req, res) => {
 
 //Populate
 const getPopulate = async (req, res) => {
-    try {
-        const result = await post.find().populate('author').exec()
-        res.status(200).json({ success: true, msg: "Fetch All ", data: result })
+        try {
+            const Result = await post.find().populate('author').exec();
+            res.status(200).json({success:true, msg:"fatch data", data:Result})
+        } catch (error) {
+            console.log(error);
+            res.status(404).json({ success: false, msg: "not found" })
+    
+        }
     }
-    catch (error) {
-        console.log(error);
-        res.status(404).json({ success: false, msg: "Data Not Found" })
-    }
-}
+
+    
 module.exports = {
     AddAuthor,
     getAuthor,

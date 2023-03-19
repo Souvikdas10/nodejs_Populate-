@@ -9,9 +9,9 @@ const postSchema=new Schema({
         type:String,
         required:true
     },
-    author:{
-        type:Schema.ObjectId,
-        ref:"author"
+    author: {
+        type: Schema.ObjectId,
+        ref: 'author'
     },
     contain:{
         type:String,
